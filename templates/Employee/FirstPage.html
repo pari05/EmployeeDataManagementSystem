@@ -1,0 +1,43 @@
+<h1>Employee Data Management System</h1>
+<head>
+<style>
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+</style>
+</head>
+<form action="/Employee/" method="post">
+
+{%  if all_employees  %}
+<table><tr>
+<B><th>Serial#</th><th>Employee Name</th><th>Age</th><th>Employee ID</th><th>Employee Email</th><th>Employee Sex</th><th>Employee Phonenumber</th></B>
+{% for employee in all_employees %}
+</tr>
+<tr>
+<td><input type="checkbox" name="chk_employee_id" value={{ employee.EmployeeID }}></td>
+<td>{{ employee.Name }} </td> <td>{{ employee.Age }} </td><td> {{ employee.EmployeeID }} </td><td> {{ employee.Email }} </td><td> {{ employee.Sex }} </td><td> {{ employee.Phonenumber}} </td>
+</tr>
+{% endfor %}
+</table>
+{% endif %}
+
+<pr>
+<pr>
+
+<input type="submit" value="Add" name="Add"/>
+<input type="submit" value="Update" name="Update"/>
+<input type="submit" value="Del" name="Delete"/>
+<input type="submit" value="Display" name="Display"/>
+</form>

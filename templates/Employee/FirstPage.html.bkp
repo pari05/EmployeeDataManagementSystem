@@ -1,0 +1,25 @@
+<h1>Employee Data Management System</h1>
+
+<form action="/Employee/" method="post">
+
+{%  if all_employees  %}
+<ol>
+
+<B>Employee Name / Age / Employee ID / Employee Email / Employee Sex / Employee Phonenumber</B>
+{% for employee in all_employees %}
+<li>
+<input type="checkbox" name="chk_employee_id" value={{ employee.EmployeeID }}>
+{{ employee.Name }} / {{ employee.Age }} / {{ employee.EmployeeID }} / {{ employee.Email }} / {{ employee.Sex }} / {{ employee.Phonenumber}} 
+</li>
+{% endfor %}
+</ol>
+{% endif %}
+
+<pr>
+<pr>
+
+<input type="submit" value="Add" name="Add"/>
+<input type="submit" value="Update" name="Update"/>
+<input type="submit" value="Del" name="Delete"/>
+<input type="submit" value="Display" name="Display"/>
+</form>
